@@ -81,7 +81,7 @@ public static class CreditAccountHandler
 <sup><a href='https://github.com/JasperFx/wolverine/blob/main/src/Samples/Middleware/AppWithMiddleware/Account.cs#L51-L73' title='Snippet source file'>snippet source</a> | <a href='#snippet-sample_creditaccounthandler' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-You'll notice at this point that the message handler is synchronous because it's no longer doing any calls to the database. Besides removing some repetitive code, this appproach
+You'll notice at this point that the [message handler](https://dexoc.com/blog/understanding-and-implementing-message-handlers-in-aspnet-core) is synchronous because it's no longer doing any calls to the database. Besides removing some repetitive code, this appproach
 arguably makes the Wolverine message handler methods easier to unit test now that you can happily "push" in system state rather than fool around with stubs or mocks.
 
 Next, let's build the actual middleware that will attempt to load an `Account` matching a command's `AccountId`, then determine if the message handling should continue
